@@ -1,5 +1,7 @@
 
-const RESTAURANT_API = import.meta.env.VITE_API_URL;
+// const RESTAURANT_API = import.meta.env.VITE_API_URL;
+const RESTAURANT_API = "https://bookingrestaurantserver.onrender.com"
+
 const API_ROUTE = {
   RESTAURANT_TYPE: "/restaurant-types",
   RESTAURANT: "/restaurants",
