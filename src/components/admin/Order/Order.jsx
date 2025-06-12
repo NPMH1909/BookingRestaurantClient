@@ -63,6 +63,7 @@ const Order = ({ selectedRestaurant }) => {
       TABLE_ROWS={list_order}
       TABLE_HEAD={order}
       pagination={orders?.pagination}
+      noDelete={true}
       isOrder={true}
       page={active}
       setPage={setActive}
