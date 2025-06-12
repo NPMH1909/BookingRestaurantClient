@@ -25,7 +25,7 @@ const MenuSection = ({
     return (
         <Card ref={menuSectionRef} className="mt-4">
             <CardBody className="">
-                <Typography variant="h3" color="black" className="mb-6 font-extrabold tracking-wide">
+                <Typography variant="h3" color="black" className="mb-6">
                     Thực đơn nhà hàng
                 </Typography>
 

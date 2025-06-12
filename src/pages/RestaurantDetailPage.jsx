@@ -79,7 +79,7 @@ const RestaurantDetailPage = () => {
   }, [total]);
 
   const { data: rencentRestaurant } = useGetRencentlyRestaurantForUserQuery();
-
+  const token = localStorage.getItem("token")
   const { data: restaurants, error: restaurantError, isLoading: restaurantLoading } = useGetRestaurantByIdQuery(id);
   const {
     data: menus,
@@ -275,7 +275,6 @@ const RestaurantDetailPage = () => {
           <RestaurantBasicInfo restaurant={restaurants?.data} />
           <RestaurantDescription restaurant={restaurants?.data} mostVideo={mostLikedVideo} />
           <MenuSection
-            // menuSectionRef={menuSectionRef}
             menus={menus}
             menuPage={menuPage}
             setMenuPage={setMenuPage}
@@ -298,7 +297,7 @@ const RestaurantDetailPage = () => {
           <Card className='mt-4'>
             <CardBody>
               <Typography variant="h3" color="black" className="mb-6 font-extrabold tracking-wide">
-                Nhà hàng uy tin
+                Nhà hàng uy tín
               </Typography>
               <CommonSlider
                 dataList={trustRestaurantsData}
@@ -309,17 +308,19 @@ const RestaurantDetailPage = () => {
             </CardBody>
           </Card>
           <Card>
-            <CardBody>
-              <Typography variant="h3" color="black" className="mb-6 font-extrabold tracking-wide">
-                Đã xem gần đây
-              </Typography>
-              <CommonSlider
-                dataList={rencentRestaurant}
-                CardComponent={ProductCard}
-                slidesPerView={3}
-                uniqueId="rencent"
-              />
-            </CardBody>
+            {token && (
+              <CardBody>
+                <Typography variant="h3" color="black" className="mb-6 font-extrabold tracking-wide">
+                  Đã xem gần đây
+                </Typography>
+                <CommonSlider
+                  dataList={rencentRestaurant}
+                  CardComponent={ProductCard}
+                  slidesPerView={3}
+                  uniqueId="rencent"
+                />
+              </CardBody>
+            )}
           </Card>
         </div>
         <BookingCard
