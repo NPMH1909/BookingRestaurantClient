@@ -8,8 +8,8 @@ export const menuApi = createApi({
   endpoints: (builder) => ({
 
     getMenuByRestaurant: builder.query({
-      query: ({ restaurantId, page = 1, size = 8, type }) =>
-        `/get-all/${restaurantId}?page=${page}&size=${size}&${type ? `type=${type}` : ''}`,
+      query: ({ restaurantId, page = 1, size = 8, category='' }) =>
+        `/get-all/${restaurantId}?page=${page}&size=${size}&category=${category}`,
     }),
 
 

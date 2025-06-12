@@ -87,7 +87,7 @@ const RestaurantDetailPage = () => {
     isLoading: menuLoading
   } = useGetMenuByRestaurantQuery({
     restaurantId: id,
-    type: selectedCategory,
+    category: selectedCategory,
     page: menuPage,
   });
 
